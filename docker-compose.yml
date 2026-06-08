@@ -2,30 +2,44 @@ version: '3.8'
 
 services:
   mongodb:
-    image: mongo:latest
+    image: mongo:6.0
     container_name: travelease-db
-    ports:
-      - "27017:27017"
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-admin123}
     volumes:
-      - mongo-data:/data/db
+      - mongodb_data:/data/db
 
   backend:
-    build:
+    build: 
       context: ./backend
-    container_name: travelease-api
-    ports:
-      - "5000:5000"
-    environment:
-      - DATABASE_URL=mongodb://mongodb:27017/travelease
+      dockerfile: Dockerfile
+    container_name: travelease-backend
+    restart: unless-stopped
     depends_on:
       - mongodb
+    expose:
+      - "5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - DATABASE_URL=mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASSWORD:-admin123}@mongodb:27017/travelease?authSource=admin
+      - JWT_SECRET=${JWT_SECRET:-your_super_secret_jwt_key_that_is_long_enough}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN:-90d}
 
   frontend:
     build:
       context: ./frontend
-    container_name: travelease-web
-    ports:
-      - "3000:3000"
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:5000/api}
+    container_name: travelease-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    expose:
+      - "3000"
 
 volumes:
-  mongo-data:
+  mongodb_data:
