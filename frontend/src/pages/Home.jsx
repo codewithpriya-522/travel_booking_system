@@ -56,7 +56,7 @@ const Home = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      
+
       navigate(`/packages?search=${searchQuery}`);
     } else {
       navigate('/packages');
@@ -75,34 +75,34 @@ const Home = () => {
 
   return (
     <div className="w-full pt-32 pb-20 bg-bg">
-      {}
-      {}
+      { }
+      { }
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse pointer-events-none"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }}></div>
-        
-        <motion.div 
+
+        <motion.div
           className="relative z-10 max-w-[1000px] mx-auto text-center w-full"
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-2 py-2 px-5 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-primary font-bold text-xs uppercase tracking-widest shadow-sm">
             <Star size={14} className="fill-primary" /> The Gold Standard in Luxury Travel
           </motion.div>
-          
+
           <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-black text-dark mb-8 leading-[1.1] tracking-tighter">
-            Escape to the <br/> <span className="text-gradient">Extraordinary</span>
+            Escape to the <br /> <span className="text-gradient">Extraordinary</span>
           </motion.h1>
-          
+
           <motion.p variants={fadeUp} className="text-xl md:text-2xl text-dark/60 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
             Unlock exclusive access to the world's most breathtaking destinations and bespoke experiences.
           </motion.p>
-          
+
           <motion.form variants={fadeUp} onSubmit={handleSearch} className="max-w-2xl mx-auto bg-white/80 backdrop-blur-xl border border-white p-2 rounded-full shadow-2xl flex flex-col sm:flex-row gap-2">
             <div className="flex-1 flex items-center px-6 gap-3">
               <Search className="text-primary" size={20} />
-              <input 
-                type="text" 
-                placeholder="Where do you want to go?" 
+              <input
+                type="text"
+                placeholder="Where do you want to go?"
                 className="w-full bg-transparent border-none outline-none py-4 text-dark font-bold placeholder-dark/40"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -126,7 +126,7 @@ const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { name: 'European Alps', img: 'https:
+              { name: 'European Alps', img: 'https://images.unsplash.com/photo-1510696859475-2a42971a36e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', span: 'col-span-2 md:col-span-2' },
               { name: 'Kyoto, Japan', img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', span: 'col-span-2 md:col-span-1' },
               { name: 'Santorini', img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac542?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', span: 'col-span-2 md:col-span-1' },
               { name: 'Tulum, Greece', img: 'https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', span: 'col-span-2 md:col-span-2' }
@@ -143,7 +143,7 @@ const Home = () => {
         </div>
       </section>
 
-      {}
+      { }
       <section className="py-24 relative bg-white/30 backdrop-blur-3xl rounded-[60px] mx-4 md:mx-8 shadow-inner border border-white/40">
         <div className="max-w-[1400px] mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -169,8 +169,8 @@ const Home = () => {
         </div>
       </section>
 
-      {}
-      {}
+      { }
+      { }
       <section className="py-32 relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center mb-20">
@@ -192,8 +192,8 @@ const Home = () => {
         </div>
       </section>
 
-      {}
-      {}
+      { }
+      { }
       <section className="py-20 bg-dark text-white rounded-[60px] mx-4 md:mx-8">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
@@ -213,7 +213,7 @@ const Home = () => {
         </div>
       </section>
 
-      {}
+      { }
       <section className="py-32">
         <div className="max-w-[1400px] mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-black text-dark mb-16 text-center">Traveler Stories</h2>
@@ -241,12 +241,12 @@ const Home = () => {
         </div>
       </section>
 
-      {}
+      { }
       <section className="py-16 border-y border-dark/5 bg-white/50">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-dark/40 mb-8">Trusted by Global Carriers</p>
           <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {}
+            { }
             <div className="text-2xl font-black tracking-tighter">Emirates</div>
             <div className="text-2xl font-black tracking-tighter">Singapore Airlines</div>
             <div className="text-2xl font-black tracking-tighter">Delta</div>
@@ -255,7 +255,7 @@ const Home = () => {
         </div>
       </section>
 
-      {}
+      { }
       <section className="py-32 max-w-[800px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-dark mb-4">Frequently Asked Questions</h2>
@@ -271,7 +271,7 @@ const Home = () => {
         </div>
       </section>
 
-      {}
+      { }
       <section className="py-32 px-6">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="max-w-[1200px] mx-auto bg-primary rounded-[48px] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse"></div>
@@ -290,7 +290,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {}
+      { }
     </div>
   );
 };
