@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  
+  
+  --color-primary: #1E3A8A; 
+  --color-secondary: #0284C7; 
+  --color-cta: #F97316; 
+  --color-bg: #FAFAFA; 
+  --color-dark: #111827; 
+}
+
+@layer base {
+  body {
+    @apply font-inter bg-bg text-dark antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(220, 100%, 74%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(25, 100%, 50%, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(220, 100%, 74%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(25, 100%, 50%, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(15,23,42,0.05)];
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/60 shadow-sm hover:shadow-[0_20px_40px_rgba(15,23,42,0.08)] transition-all duration-500;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-cta;
+  }
+
+  .btn-premium {
+    @apply relative overflow-hidden transition-all duration-300 active:scale-95;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
