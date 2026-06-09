@@ -42,7 +42,6 @@ A full-stack, production-ready travel package booking platform built with the ME
 
 **DevOps**
 - Docker & Docker Compose
-- Nginx
 - Render (Deployment)
 
 ---
